@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>WEB ASSIGNMENT 5</title>
+</head>
+<body>
+    <div>
+        <h3> First table </h3>
+        <table id="tabledata" border= "1">
+    
+            <thead>
+                    <tr>
+                            <th>NAME</th>
+                            <th>BOUNCES</th>
+                    </tr>
+            </thead>
+           <tbody id="tablebody" >
+                   <tr>
+                        <td>TENDAI</td>
+                        <td>7</td>
+                    </tr>
+                    <tr >
+                        <td>KUDZAI</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>TAURAI</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>NYIKA</td>
+                        <td>1000</td>
+                    </tr>
+           </tbody>
+        </table>
+       
+
+
+        <br>
+        <h3>Second table </h3>
+        <table id="tabledata" border= "1">
+    
+            <thead>
+                    <tr>
+                            <th>NAME</th>
+                            <th>FAVOURITE DISH</th>
+                    </tr>
+            </thead>
+           <tbody id="tablebody" >
+                   <tr>
+                        <td>TENDAI</td>
+                        <td>SADZA MADORA</td>
+                    </tr>
+                    <tr >
+                        <td>KUDZAI</td>
+                        <td>SADZA CHICKEN</td>
+                    </tr>
+                    <tr>
+                        <td>TAURAI</td>
+                        <td>GANGO</td>
+                    </tr>
+                
+           </tbody>
+        </table>
+        <div class="row">
+                <button id="zebra"> SHIFT</button>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        let button = document.getElementById("zebra");
+        // listen for a click event on the button
+        button.addEventListener('click', ()=>{
+            var table_data = document.getElementsByTagName("table");
+            let number_of_tables = table_data.length; 
+            // traversing through the tables
+            let table_index = 0;
+            while(table_index < number_of_tables){
+                let table = table_data[table_index].getElementsByTagName('tr'); // creating a table container so that we can traverse it
+                let row_count = 0;
+                for(row_count =0; row_count< table.length; row_count+=2){
+                    table[row_count].style.background = "black";
+                    table[row_count].style.color= "white";
+                }
+                // increment table index by 1
+                table_index++;
+            }
+
+
+           
+        });
+       
+       
+        
+        
+
+     
+    </script>
+</body>
+</html>
